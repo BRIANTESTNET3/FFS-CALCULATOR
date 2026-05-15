@@ -3,6 +3,7 @@ import Part4Level1 from './modules/Part4Level1';
 import Part4Level2 from './modules/Part4Level2';
 import Part5Level1 from './modules/Part5Level1';
 import Part5Level2 from './modules/Part5Level2';
+import Part6Level1 from './modules/Part6Level1';
 import './App.css';
 
 const MODULES = [
@@ -10,7 +11,15 @@ const MODULES = [
   { id:'p4l2', part:'Part 4', level:'Level 2', label:'General Metal Loss', sub:'CTP · RSFa · Rerate',  color:'blue', component: Part4Level2 },
   { id:'p5l1', part:'Part 5', level:'Level 1', label:'Local Metal Loss',   sub:'LTA · λ · Folias Mt', color:'teal', component: Part5Level1 },
   { id:'p5l2', part:'Part 5', level:'Level 2', label:'Local Metal Loss',   sub:'Profile RSF · Eq.5.18', color:'teal', component: Part5Level2 },
-];
+{ 
+    id:'p6l1', 
+    part:'Part 6', 
+    level:'Level 1', 
+    label:'Pitting Corrosion', 
+    sub:'RSF · Pit couple · Table 6.1', 
+    color:'teal', 
+    component: Part6Level1 
+  },];
 
 export default function App() {
   const [active, setActive] = useState(null);
@@ -36,7 +45,7 @@ export default function App() {
             <div style={{fontSize:11,color:'var(--text3)',marginTop:2}}>API 579-1/ASME FFS-1</div>
           </div>
 
-          {['Part 4','Part 5'].map(part => (
+          {['Part 4','Part 5','Part 6'].map(part => (
             <div key={part}>
               <div className="side-section-title">
                 {part} – {part==='Part 4' ? 'General Metal Loss' : 'Local Metal Loss'}
